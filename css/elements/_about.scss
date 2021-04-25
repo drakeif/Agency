@@ -1,0 +1,37 @@
+.about {
+    position: relative;
+    &__inner {
+        padding: 100px 0 0 0;
+        overflow: hidden;
+        @include max(600) {
+            padding: 60px 0;
+        }
+    }
+    &__image {
+        transform: translate(-105px, 33px);
+        &-pic {
+            display: inline-block;
+            max-width: 100%;
+            height: auto;
+        }
+    }
+    &__decor {
+        position: relative;
+        &::after {
+            display: block;
+            content: '';
+            width: 550px;
+            height: 550px;
+            background: url('../img/svg/decor.svg');
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            top: -79px; 
+            right: -20%;
+            @include max(600) {
+                z-index: -1;
+            }
+        }
+    }
+}

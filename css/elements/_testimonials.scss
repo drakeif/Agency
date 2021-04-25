@@ -1,0 +1,197 @@
+.testimonials {
+    padding: 80px 0 160px 0;
+    position: relative;
+    background-image: url('../img/dot.png'), url('../img/map.png'), url('../img/svg/test-bg.svg');
+    background-size: 870px, 1400px, cover;
+    background-repeat: no-repeat;
+    background-position: center 360px, center, center bottom;
+    @include min(600) {
+        padding: 155px 0 260px 0;
+    }
+    &__section {
+        margin-bottom: 80px;
+        .section-main__title {
+            color: $wh;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        .section-main__subtitle {
+            color: $wh;
+            text-align: center;
+            margin-bottom: 0;
+        }
+    }
+    > .container {
+        position: relative;
+    }
+    &__decor-round {
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        transform: translate(-36%, -32%);
+    }
+    &__decor {
+        position: absolute;
+        z-index: 0;
+        &:nth-child(1) {
+            left: 10%;
+            top: 524px;
+        }
+        &:nth-child(2) {
+            right: 7%;
+            top: 100px;
+        }
+     
+        &:nth-child(3) {
+            right: 3%;
+            top: 293px;
+        }
+        &:nth-child(4) {
+            right: 11%;
+            top: 549px;
+        }
+        &:nth-child(5) {
+            left: 14%;
+            top: 118px;
+        }
+        &:nth-child(6) {
+            left: -5%;
+            top: 357px;
+        }
+    }
+}
+.cards {
+    max-width: 730px;
+    margin: 0 auto;
+    .splide__track {
+        overflow: initial;
+    }
+    .splide__list {
+        position: relative;
+        &::before, &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $wh;
+            border-radius: 20px;
+            box-shadow: 0px 30px 70px 0px rgba($violet, .5);
+            transition: all .2s linear;
+        }
+        &::after {
+            background-color: rgba($wh, .8);
+            transform: translateY(30px) scaleX(0.95);
+            z-index: 2;
+        }
+        &::before {
+            background-color: rgba($wh, .2);
+            transform: translateY(50px) scaleX(0.88);
+            z-index: 3;
+        }
+        &.toggle-slides {
+            &::after {
+                transform: translateY(50px) scaleX(0.88);
+                z-index: 2;
+            }
+            &::before {
+                transform: translateY(30px) scaleX(0.95);
+                z-index: 3;
+            }
+        }
+    }
+    .splide--fade>.splide__track>.splide__list>.splide__slide {
+        z-index: 4;
+    }
+    .splide__arrow {
+        width: 50px;
+        height: 50px;
+        border: 2px solid $silver;
+        background-color: transparent;
+        transition: all .2s linear;
+        &:hover {
+            background-color: $secondary;
+            border: 2px solid $secondary;
+            path {
+                fill: $wh;
+            }
+        }
+    }
+    .splide__arrow--prev {
+        top: auto;
+        left: 49%;
+        bottom: 48px;
+        transform: translateX(-100%);
+    }
+    .splide__arrow--next {
+        top: auto;
+        right: 49%;
+        bottom: 48px;
+        transform: translateX(100%);
+    }
+
+    &__item {
+        padding: 35px 35px 125px 35px;
+        max-width: 730px;
+        position: relative;
+        margin: 0 auto;
+
+        border-radius: 20px;
+        background-color: $wh;
+        box-shadow: 0px 30px 70px 0px rgba($violet, .5);
+        
+        @include min(992) {
+            padding: 75px 75px 135px 75px;
+        }
+        &::before {
+            content: '';
+            display: inline-block;
+            background-image: url('../img/quote.png');
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: contain;
+            width: 234px;
+            height: 168px;
+            position: absolute;
+            right: 0;
+            left: 0;
+            margin: auto;
+            z-index: 0;
+        }
+        > * {
+            position: relative;
+            z-index: 1;
+        }
+        &-text {
+            font-size: 24px;
+            text-align: center;
+            color: $silver;
+            font-weight: 700;
+            margin-bottom: 35px;
+            
+            @include min(600) {
+                line-height: 2;
+            }
+        }
+        &-name {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.2;
+            text-align: center;
+            color: $violet;
+            margin-bottom: 12px;
+        }
+        &-stars {
+            display: flex;
+            justify-content: center;
+            column-gap: 9px;
+            img {
+                display: inline-block;
+                width: 21px;
+                height: 21px;
+            }
+        }
+    }
+}

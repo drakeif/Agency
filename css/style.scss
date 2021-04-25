@@ -1,0 +1,164 @@
+// FONTS
+@import '../css/elements/fonts';
+// VARS
+@import '../css/elements/vars';
+// MEDIA
+@import '../css/elements/media';
+// SCROLL BAR
+*::-webkit-scrollbar {
+    width: 10px;
+}
+*::-webkit-scrollbar-track {
+    background: $dark; 
+}
+*::-webkit-scrollbar-thumb {
+    background: $primary;
+}
+*::-webkit-scrollbar-thumb:hover {
+    background: $violet; 
+}
+// CORRECT STYLE
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+*,*::before,*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+body {
+    font-family: 'Nexa', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+    overflow-x: hidden;
+    &.active {
+        overflow-y: hidden;
+    }
+}
+.container {
+    max-width: 1470px;
+    min-width: 320px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+// BUTTONS
+.btn {
+    background-color: $primary;
+    display: inline-block;
+    color: $btn;
+    text-transform: uppercase;
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.2;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    min-width: 270px;
+    padding: 23px 40px;
+    transition: background-color .2s linear;
+    &:hover, &:active {
+        background-color: darken($primary, 5%)
+    }
+    &--secondary {
+        background-color: $secondary;
+        &:hover, &:active {
+            background-color: darken($secondary, 5%)
+        }
+    }
+    &--sm {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        min-width: auto;
+        background-color: $wh;
+        font-size: 16px;
+        color: $violet;
+        &:hover, &:active {
+            background-color: darken($wh, 5%)
+        }
+        @include max(600) {
+            padding: 10px 20px;
+        }
+    }
+    &:focus, &:active {
+        outline: none;
+    }
+}
+// SECTION - MODIFY
+.section-main {
+    @include min(600) {
+        padding: 0 50px;
+    }
+    &__title {
+        text-transform: uppercase;
+        font-size: 30px;
+        font-weight: 400;
+        color: $violet;
+        letter-spacing: 3px;
+        line-height: 1;
+        margin-bottom: 40px;
+        @include max(600) {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+    }
+    &__subtitle {
+        font-size: 70px;
+        font-weight: 700;
+        color: $dark;
+        line-height: 0.94;
+        letter-spacing: -6px;
+        margin-bottom: 48px;
+        @include max(1200) {
+            font-size: 60px;
+        }
+        @include max(600) {
+            font-size: 40px;
+            margin-bottom: 30px;
+            letter-spacing: -2px;
+            & br {
+                display: none;
+            }
+        }
+       
+    }
+    &__text {
+        color: rgba($dark, .81);
+        line-height: 1.8;
+        margin-bottom: 48px;
+        @include max(600) {
+            margin-bottom: 35px;
+            & br {
+                display: none;
+            }
+        }
+    }
+}
+// GRID
+.row {
+    display: block;
+    @include min(992) {
+        display: flex;
+    } 
+}
+.col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+.col-md-none {
+    @include max(992) {
+        display: none;
+    }
+}
+// MAIN STYLES
+@import '../css/elements/header';
+@import '../css/elements/about';
+@import '../css/elements/services';
+@import '../css/elements/testimonials';
+@import '../css/elements/contact';
+@import '../css/elements/footer';

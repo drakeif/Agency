@@ -1,0 +1,19 @@
+.services {
+    padding: 100px 0 80px 0;
+    background-image: url("../img/services-bg.png");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: contain;
+    overflow: hidden;
+    @include max(600) {
+        padding: 60px 0;
+    }
+    &__image {
+        transform: translateY(47px);
+        &-pic {
+            display: inline-block;
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}

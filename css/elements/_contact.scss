@@ -1,0 +1,124 @@
+.contact {
+    padding: 100px 0;
+    background: $wh-2;
+    position: relative;
+    &::before {
+        @include min(992) {
+            content: "";
+            width: 550px;
+            height: 550px;
+            background-image: url('../img/svg/contacts-decor-1.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translate(-69%, -13%);
+            z-index: 0;
+        }
+    }
+    &__form {
+        margin: 0 auto;
+        width: 100%;
+        flex-grow: 1;
+        @include min(992) {
+            width: auto;
+            margin: 0 0 0 65px;
+        }
+    }
+}
+.form {
+    display: block;
+    background: $wh;
+    max-width: 555px;
+    position: relative;
+    &::before {
+        @include min(992) {
+            content: "";
+            width: 140px;
+            height: 140px;
+            background-image: url('../img/svg/form-decor-1.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translate(60%, -50%);
+            z-index: 3;
+        }
+    }
+    &:after {
+        display: block;
+        content: '';
+        width: 100%;
+        height: 25px;
+        background: $wh;
+        box-shadow: 0px 0px 20px 4px $form;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        transform: translateY(100%) scaleX(.95);
+    }
+    &__inner {
+        padding: 14px 10px 55px 10px;
+        background: $wh;
+        position: relative;
+        box-shadow: 0px 0px 20px 4px $form;
+        border-radius: 20px;
+        z-index: 2;
+        @include min(600) {
+            padding: 75px 40px 85px 40px;
+        }
+    }
+    &__field {
+        position: relative;
+        margin-bottom: 20px;
+    }
+    &__field--text {
+        margin-bottom: 47px;
+    }
+    &__input {
+        padding: 18px 40px 17px 40px;
+        display: block;
+        width: 100%;
+        border: 1px solid rgba($form, .5);
+        border-radius: 5px;
+        font-size: 20px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $violet;
+        @include min(600) {
+            padding: 26px 40px 24px 40px;
+        }
+    }
+    &__text {
+        resize: none;
+    }
+    &__label {
+        padding: 0px 6px;
+        display: inline-block;
+        background: $wh;
+        font-size: 19px;
+        font-weight: 400;
+        color: rgba($label, .7);
+        cursor: text;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 34px;
+        transition: top .1s linear;
+    }
+    &__field--text .form__label {
+        top: 37px;
+    }
+    &__label.active {
+        top: 0%;
+        color: rgba($label, .5);
+    }
+}
